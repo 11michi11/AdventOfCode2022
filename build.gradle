@@ -1,0 +1,38 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.7.21'
+    id 'application'
+    id 'java'
+    id 'groovy'
+}
+
+group = 'com.michi'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.codehaus.groovy:groovy:3.0.13'
+    testImplementation 'org.spockframework:spock-core:2.3-groovy-3.0'
+    implementation 'com.google.guava:guava:31.1-jre'
+    implementation "org.jgrapht:jgrapht-core:1.5.1"
+    implementation "org.jgrapht:jgrapht-guava:1.5.1"
+    implementation "org.jgrapht:jgrapht-ext:1.5.1"
+}
+
+test {
+    useJUnitPlatform()
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = '1.8'
+}
+
+compileTestKotlin {
+    kotlinOptions.jvmTarget = '1.8'
+}
+
+application {
+    mainClassName = 'MainKt'
+}
