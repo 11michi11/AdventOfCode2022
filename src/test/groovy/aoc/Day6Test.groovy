@@ -29,7 +29,7 @@ class Day6Test extends Specification {
         var day = new Day6()
 
         expect:
-        day.part2("six-test") == 1
+        day.part2("six-test") == 19
     }
 
     def "Part2"() {
